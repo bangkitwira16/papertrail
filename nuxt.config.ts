@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-08-01',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
+  // @ts-expect-error Tailwind resolves Vite 8 types while Nuxt currently exposes Vite 7 types.
   vite: { plugins: [tailwindcss()] },
   runtimeConfig: {
     supabaseUrl: process.env.SUPABASE_URL || '',

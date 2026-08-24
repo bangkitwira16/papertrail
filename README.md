@@ -8,13 +8,14 @@ Papertrail is a focused collaborative document workspace built for the Ajaia AI-
 - Bold, italic, underline, H1/H2, bulleted and numbered lists, blockquotes, undo, and redo
 - Debounced autosave with visible saving, saved, and error states
 - Import `.txt` and `.md` files up to 1 MB into new editable documents
+- Export the current rich-text document as a portable Markdown file
 - Seeded user switcher for `Alex`, `Maya`, and `Sam`
 - Owner/shared document filtering and document-level access checks
 - Owner-only sharing by seeded-user email
 - Local file persistence with atomic writes and a Supabase Postgres production adapter
 - Responsive dashboard and editor layouts
 - Validation for document data, share emails, file type, and upload size
-- Automated access-control, application-service, and safe-import tests
+- Automated access-control, application-service, safe-import, and Markdown-export tests
 
 ## Stack
 
@@ -37,7 +38,7 @@ app/
     components/               Document presentation and lazy editor UI
     composables/              Library and editor workflows
     domain/                   Frontend document contracts
-    utils/                    Presentation-only helpers
+    utils/                    Presentation and Markdown-export helpers
   pages/                      Thin route composition
 
 server/
@@ -127,7 +128,7 @@ The assignment explicitly allows a documented local file store. The local adapte
 - Shared users receive editor access; viewer/editor roles are not implemented.
 - Collaboration is persisted but not realtime.
 - Markdown files are imported as safely escaped plain text with paragraph structure, not full Markdown syntax rendering.
-- Attachments, comments, version history, offline sync, and export are out of scope.
+- Attachments, comments, version history, offline sync, and PDF export are out of scope.
 
 With another 2–4 hours, the next priorities would be Supabase Auth plus RLS, viewer/editor sharing roles, then lightweight document version snapshots.
 

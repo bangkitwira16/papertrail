@@ -29,6 +29,7 @@ On the frontend, `app/features/documents` owns the feature vertically. Pages are
 - Tiptap/ProseMirror is isolated in a `.client.vue` async component, so it is absent from the server-rendered dashboard path and does not execute during SSR.
 - The sharing dialog is lazy-loaded only after an owner requests it.
 - Editor toolbar code is colocated with the editor chunk instead of the application shell.
+- Markdown conversion and download behavior live in a feature utility and a dedicated editor action; export uses the live editor state and needs no server round trip.
 
 ## Data model
 
@@ -45,6 +46,7 @@ An owner can open, edit, and share a document. A shared user can open and edit i
 - Imported files are size/type checked and HTML-escaped before conversion.
 - Zod limits title and content sizes at the API boundary.
 - Save failures remain visible and do not falsely claim success.
+- Markdown export derives a safe filename and converts only the supported rich-text surface.
 
 ## Production evolution
 

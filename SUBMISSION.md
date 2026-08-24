@@ -5,6 +5,7 @@
 - Complete Nuxt/Vue source code
 - Tailwind CSS responsive UI
 - Tiptap rich-text editor
+- Markdown export stretch feature
 - Nuxt server API routes
 - Local persistence and Supabase production adapters
 - Supabase SQL schema and seed users
@@ -16,7 +17,7 @@
 
 ## Verified
 
-- `pnpm test`: 5 tests passing
+- `pnpm test`: 7 tests passing
 - `pnpm build`: production build passing
 - Browser verification: create, rename, edit, autosave/reopen, and share flows passing
 
@@ -30,7 +31,7 @@
 
 - Authentication is simulated with three seeded users.
 - Sharing grants edit access only; roles are not configurable.
-- No realtime collaboration, comments, version history, or export.
+- No realtime collaboration, comments, version history, or PDF export.
 - `.md` import preserves text and paragraph breaks but does not parse Markdown formatting.
 
 ## Next 2–4 hours

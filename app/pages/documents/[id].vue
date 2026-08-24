@@ -38,7 +38,7 @@ const LazyShareDialog = defineAsyncComponent(() => import('~/features/documents/
       </div>
 
       <ClientOnly>
-        <LazyDocumentEditor :content="document.content" @change="updateContent" />
+        <LazyDocumentEditor :content="document.content" :document-title="title" @change="updateContent" />
         <template #fallback><div class="mx-auto mt-8 min-h-[70vh] max-w-[900px] animate-pulse bg-white/70" /></template>
       </ClientOnly>
     </main>

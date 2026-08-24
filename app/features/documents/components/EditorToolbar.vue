@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import type { Editor } from '@tiptap/vue-3'
+import ExportMarkdownButton from './ExportMarkdownButton.vue'
 
-defineProps<{ editor?: Editor }>()
+defineProps<{ editor?: Editor, documentTitle: string }>()
 
 interface ToolbarControl {
   label: string
@@ -35,5 +36,6 @@ const controls: ToolbarControl[] = [
         <span v-else>{{ control.label }}</span>
       </button>
     </template>
+    <ExportMarkdownButton :editor="editor" :document-title="documentTitle" />
   </div>
 </template>

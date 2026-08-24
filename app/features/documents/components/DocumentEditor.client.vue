@@ -5,7 +5,7 @@ import Underline from '@tiptap/extension-underline'
 import Placeholder from '@tiptap/extension-placeholder'
 import EditorToolbar from './EditorToolbar.vue'
 
-const props = defineProps<{ content: string }>()
+const props = defineProps<{ content: string, documentTitle: string }>()
 const emit = defineEmits<{ change: [content: string] }>()
 const editor = shallowRef<Editor>()
 
@@ -30,7 +30,7 @@ onBeforeUnmount(() => editor.value?.destroy())
 <template>
   <div>
     <div class="mx-auto mb-5 max-w-[1180px] px-4 md:mb-8 md:px-8">
-      <EditorToolbar :editor="editor" />
+      <EditorToolbar :editor="editor" :document-title="documentTitle" />
     </div>
     <div class="editor-surface mx-auto min-h-[70vh] max-w-[900px] bg-paper px-8 py-12 shadow-[0_12px_50px_rgba(23,33,28,0.08)] sm:px-14 md:rounded-sm md:px-20 md:py-16">
       <EditorContent :editor="editor" />
