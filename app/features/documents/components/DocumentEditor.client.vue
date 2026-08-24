@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Editor, EditorContent } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
-import Underline from '@tiptap/extension-underline'
 import Placeholder from '@tiptap/extension-placeholder'
 import EditorToolbar from './EditorToolbar.vue'
 
@@ -12,7 +11,7 @@ const editor = shallowRef<Editor>()
 onMounted(() => {
   editor.value = new Editor({
     content: props.content,
-    extensions: [StarterKit, Underline, Placeholder.configure({ placeholder: 'Start writing…' })],
+    extensions: [StarterKit, Placeholder.configure({ placeholder: 'Start writing…' })],
     editorProps: { attributes: { 'aria-label': 'Document content' } },
     onUpdate: ({ editor }) => emit('change', editor.getHTML())
   })
