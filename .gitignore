@@ -1,0 +1,11 @@
+.nuxt
+.output
+node_modules
+.env
+.data/*.json
+!.data/.gitkeep
+coverage
+.DS_Store
+.vercel
+outputs
+work
