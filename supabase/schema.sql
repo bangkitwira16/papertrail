@@ -34,4 +34,11 @@ alter table public.app_users enable row level security;
 alter table public.documents enable row level security;
 alter table public.document_shares enable row level security;
 
--- The app uses a server-only service-role key. No public Data API policies are required.
+-- The app uses a server-only secret key, so public Data API policies are not required.
+-- Explicit grants keep fresh SQL-editor deployments compatible with the service role.
+grant usage on schema public to service_role;
+grant select, insert, update, delete on table
+  public.app_users,
+  public.documents,
+  public.document_shares
+to service_role;
