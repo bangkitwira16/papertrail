@@ -22,9 +22,9 @@
 
 ## Links to complete before submission
 
-- Live product URL: `TODO`
+- Live product URL: https://papertrail-six-hazel.vercel.app/
 - Google Drive folder: `TODO`
-- Walkthrough video: add URL to `VIDEO_URL.txt`
+- Walkthrough video: https://github.com/bangkitwira16/papertrail/releases/tag/walkthrough-v1
 
 ## Known limitations
 
